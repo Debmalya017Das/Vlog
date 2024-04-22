@@ -11,10 +11,10 @@ export default function Reg(){
             body: JSON.stringify({username,password}),
             headers:{'Content-Type':'application/json'},
         })
-        if(response.status === 200){
+        if(response.status !== 200){
             alert('registration failed');
         }else{
-            alert('registration sucess');
+            alert('registration success');
         }
     }
     return(
