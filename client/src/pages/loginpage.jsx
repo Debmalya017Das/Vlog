@@ -8,11 +8,11 @@ export default function Loginpage(){
 
     async function login(ev){
         ev.preventDefault();
-        const response= await fetch('http://localhost:5173/login',{
+        const response= await fetch('http://localhost:3000/login',{
             method: 'POST',
             body: JSON.stringify({username,password}),
             headers:{'Content-Type':'application/json'},
-            credentials: 'include',
+            // credentials: 'include',
         });
         if(response.ok){
             setredirect(true);

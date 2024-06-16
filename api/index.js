@@ -11,7 +11,8 @@ const secret ='asdas5das5few8rfs8ef7sd8f8';
 app.use(cors());
 app.use(cors({credentials:true, origin:'http://localhost:5173'}));
 app.use(express.json());
-
+require('dotenv').config();
+const PORT = process.env.PORT || 3000;
 
 
 mongoose.connect('mongodb+srv://debmalya017:GHZ4SjSiFn7iubk7@vlog.0r8i8e9.mongodb.net/?retryWrites=true&w=majority&appName=vlog');
@@ -45,7 +46,7 @@ app.post('/login' , async (req,res)=>{
     }
 
 });
-app.listen(3000);
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 
